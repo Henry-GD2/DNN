@@ -14,3 +14,7 @@ model.compile(loss='categorical_crossentropy',optimizer=Adam(),metrics=['accurac
 accuracy代表以准确率为最终结果好坏的判断标准
 
 loss='categorical_crossentropy'是使用交叉熵作为损失函数，在概率分类问题上一般用这个比较好
+
+# 一些参数的选择
+ model.add(Dense(units=units,activation='relu'))#relu这个激活函数可以加快速度，通过摒弃一些相关性不强的神经链接
+ model.add(Dropout(0.7))  #此处防止过拟合抛弃掉一些因素，每次训练随机抛弃70%的数据
